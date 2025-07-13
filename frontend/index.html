@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Powered Multimodal Smart City Routing</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <h1>🧠 AI Smart City Routing</h1>
+            <p>Click two points on the map to find the optimal multimodal route</p>
+        </div>
+    </header>
+
+    <!-- Map Container -->
+    <div id="map"></div>
+
+    <!-- Route Information Panel -->
+    <div id="route-info" class="route-info hidden">
+        <h3>Route Information</h3>
+        <div id="route-stats">
+            <div class="stat">
+                <span class="stat-label">Total Time:</span>
+                <span id="total-time" class="stat-value">-</span>
+            </div>
+            <div class="stat">
+                <span class="stat-label">Total Cost:</span>
+                <span id="total-cost" class="stat-value">-</span>
+            </div>
+        </div>
+        <div id="route-segments">
+            <h4>Route Segments</h4>
+            <div id="segments-list"></div>
+        </div>
+    </div>
+
+    <!-- Legend -->
+    <div class="legend">
+        <h3>Transport Modes</h3>
+        <div class="legend-item">
+            <div class="legend-color" style="background-color: #ffd700;"></div>
+            <span>🚶 Walking</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color" style="background-color: #ff8c00;"></div>
+            <span>🚴 Biking</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color" style="background-color: #4169e1;"></div>
+            <span>🚗 Driving</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color" style="background-color: #808080;"></div>
+            <span>🔄 Transfer</span>
+        </div>
+    </div>
+
+    <!-- Loading Indicator -->
+    <div id="loading" class="loading hidden">
+        <div class="spinner"></div>
+        <p>Calculating optimal route...</p>
+    </div>
+
+    <!-- Instructions -->
+    <div class="instructions">
+        <p><strong>Instructions:</strong></p>
+        <ol>
+            <li>Click on the map to set your starting point</li>
+            <li>Click again to set your destination</li>
+            <li>View the optimized multimodal route</li>
+            <li>Click anywhere to reset and plan a new route</li>
+        </ol>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
